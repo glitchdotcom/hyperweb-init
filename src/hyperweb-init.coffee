@@ -60,7 +60,7 @@ module.exports =
     app.use bodyParser.json()
     app.use bodyParser.text()
 
-    # template engine support
+    # template engines
     engines = require('consolidate')
     app.engine('jade', engines.jade)
     app.engine('html', engines.nunjucks)
@@ -68,6 +68,9 @@ module.exports =
 
     nunjucks = require 'nunjucks'
     nunjucks.configure 'views', { autoescape: true }
+
+    # CSON support
+    require 'fs-cson/register'
 
     # HW projects run on port 3000
     app.set 'port', process.env.PORT or 3000
