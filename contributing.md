@@ -1,5 +1,14 @@
 PRs welcome,
 
+
+compiling
+---------
+from the root of this project run:
+
+```
+coffee -cw --output lib src
+```
+
 tests
 -----
 No tests yet, we should probably have them eventually.
