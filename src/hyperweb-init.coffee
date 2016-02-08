@@ -4,8 +4,9 @@
 fs = require "fs"
 less = require "less"
 path = require "path"
-url = require "url"
 randomEmoji = require 'random-emoji'
+stylish = require 'stylish'
+url = require "url"
 
 module.exports =
   init: ->
@@ -41,8 +42,13 @@ module.exports =
               res.set('Content-Type', 'text/css')
               res.send output.css
 
-    stylus = require('stylus')
-    app.use(stylus.middleware('public'))
+    app.use stylish
+      src: __dirname + '/public'
+      watchCallback: (error, filename) ->
+        if error
+          console.log error
+        else
+          console.log "stylus compiled , #{filename}"
 
     # JS preprocessors
     coffeeMiddleware = require('coffee-middleware')

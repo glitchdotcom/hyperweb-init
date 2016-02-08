@@ -25,7 +25,7 @@ app.get("/", function (request, response) {
 ```
 and so on.
 
-Fancy Languages Supported 🐕
+Fancy languages supported 🐕
 ---------------
 
 - CoffeeScript
