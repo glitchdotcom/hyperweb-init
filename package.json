@@ -2,7 +2,7 @@
   "name": "hyperweb-init",
   "version": "1.0.0",
   "description": "Inits a Node Project with Express and file support",
-  "main": "dist/hyperweb-init.js",
+  "main": "lib/hyperweb-init.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
