@@ -1,6 +1,6 @@
 {
   "name": "hyperweb-init",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Inits a Node Project with Express and file support",
   "main": "lib/hyperweb-init.js",
   "scripts": {

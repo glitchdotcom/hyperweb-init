@@ -26,7 +26,7 @@ module.exports =
 
     # CSS preprocessors
       # todo: deprecate LESS specific rendering in favor of something more flexible
-      lessAutoprefixer = new LessAutoPrefixer()
+      lessAutoprefixer = new LessAutoprefixer()
       fs.readFile lessPath, 'utf8', (err, lessSrc) ->
         if err
           # Ignore ENOENT to fall through as 404.
@@ -38,7 +38,7 @@ module.exports =
           renderOptions =
             filename: lessPath
             paths: []
-            plugins: [autoprefixPlugin]
+            plugins: [lessAutoprefixer]
 
           less.render lessSrc, renderOptions, (err, output) ->
             if err
