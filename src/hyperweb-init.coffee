@@ -3,9 +3,12 @@
 
 fs = require "fs"
 less = require "less"
+LessAutoprefixer = require 'less-plugin-autoprefix'
 path = require "path"
 randomEmoji = require 'random-emoji'
 stylish = require 'stylish'
+# stylus = require 'stylus'
+stylusAutoprefixer = require 'autoprefixer-stylus'
 url = require "url"
 
 module.exports =
@@ -23,6 +26,7 @@ module.exports =
 
     # CSS preprocessors
       # todo: deprecate LESS specific rendering in favor of something more flexible
+      lessAutoprefixer = new LessAutoPrefixer()
       fs.readFile lessPath, 'utf8', (err, lessSrc) ->
         if err
           # Ignore ENOENT to fall through as 404.
@@ -34,6 +38,7 @@ module.exports =
           renderOptions =
             filename: lessPath
             paths: []
+            plugins: [autoprefixPlugin]
 
           less.render lessSrc, renderOptions, (err, output) ->
             if err
@@ -42,13 +47,16 @@ module.exports =
               res.set('Content-Type', 'text/css')
               res.send output.css
 
+    # todo: verify autoprefixer works for styl
     app.use stylish
       src: __dirname + '/public'
+      setup: (renderer) ->
+        renderer.use stylusAutoprefixer()
       watchCallback: (error, filename) ->
         if error
           console.log error
         else
-          console.log "stylus compiled , #{filename}"
+          console.log "#{filename} compiled to css"
 
     # JS preprocessors
     coffeeMiddleware = require('coffee-middleware')
@@ -88,6 +96,6 @@ module.exports =
       emojis += emoji.character
 
     app.server = app.listen app.get('port'), ->
-      console.log("#{emojis} app started")
+      console.log("#{emojis} Your app is running")
 
     return app

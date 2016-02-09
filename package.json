@@ -1,6 +1,6 @@
 {
   "name": "hyperweb-init",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Inits a Node Project with Express and file support",
   "main": "lib/hyperweb-init.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "url": "git+https://github.com/FogCreek/hyperweb-init.git"
   },
   "dependencies": {
+    "autoprefixer-stylus": "^0.9.1",
     "body-parser" :"1.14.2",
     "coffee-script": "^1.9.3",
     "coffee-middleware": "^0.3.0",
@@ -19,9 +20,11 @@
     "handlebars": "^3.0.3",
     "jade": "^1.11.0",
     "less": "^2.5.3",
+    "less-plugin-autoprefix": "^1.5.1",
     "nunjucks": "^1.3.4",
     "random-emoji": "^1.0.0",
     "fs-cson": "^0.3.1",
+    "stylus": "^0.53.0",
     "stylish": "^0.6.0"
   },
   "keywords": [
