@@ -1,3 +1,5 @@
+# 😱 THIS LIB IS DEPRECATED
+
 # HyperWeb init
 
 A quick, simple way to start an Express project with fancy language support
