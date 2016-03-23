@@ -1,4 +1,9 @@
-# 😱 THIS LIB IS DEPRECATED
+# THIS LIB IS DEPRECATED 👻
+
+# Use [https://github.com/FogCreek/HyperDev-init](https://github.com/FogCreek/HyperDev-init) instead
+
+
+...
 
 # HyperWeb init
 
